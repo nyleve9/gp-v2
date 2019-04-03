@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+html, body, #app, #app>div {
+  width: 100vw;
+  height: 100vh;
+  background-color: lightgray;
+}
