@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 // import SearchBar from './SearchBar.js';
 import DrawLineChart from './DrawLineChart';
 import DrawBarChart from './DrawBarChart';
-// import DrawTreeChart from './DrawTreeChart';
+import DrawTreeChart from './DrawTreeChart';
 // import './RenderedChart.css';
 // import Level1JobData from './Level1JobData';
 // import LoadCsvData from './LoadCsvData';
@@ -551,6 +551,7 @@ class RenderedChart extends Component {
     return (  
       <div>
         {/* <SearchBar /> */}
+        <DrawTreeChart />
         <DrawLineChart data={this.state.data}/>
         <DrawBarChart data={this.state.data}/>
         {/* <LoadCsvData /> */}
