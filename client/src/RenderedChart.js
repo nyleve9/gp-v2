@@ -551,9 +551,9 @@ class RenderedChart extends Component {
     return (  
       <div>
         {/* <SearchBar /> */}
-        <DrawTreeChart />
-        {/* <DrawLineChart data={this.state.data}/>
-        <DrawBarChart data={this.state.data}/> */}
+        {/* <DrawTreeChart /> */}
+        <DrawLineChart data={this.state.data}/>
+        <DrawBarChart data={this.state.data}/>
         {/* <LoadCsvData /> */}
       </div>
     );

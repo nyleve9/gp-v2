@@ -11,11 +11,11 @@ class DrawTreeChart extends Component {
   state = {  }
   render() { 
     return (  
-      <div id="treeWrapper" style={{width: '300em', height: '300em'}}>
+      <div id="treeWrapper" style={{width: '800em', height: '300em'}}>
         <Tree 
           data={exTreeData} 
           translate={{x:100, y:400}}
-          separation={{siblings:1, nonSiblings:1}}
+          separation={{siblings:0.8, nonSiblings:3}}
           textLayout={{textAnchor: "start", x: 12, y: 0, transform: undefined }}
         />
       </div>
