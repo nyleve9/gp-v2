@@ -31,7 +31,6 @@ class App extends Component {
           <Route exact path="/social" component={Social} />
           <Footer /> */}
           <RenderedChart />
-          Home Init
         </div>
       </Router>
     );
