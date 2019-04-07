@@ -11,50 +11,51 @@ const Data = require('./data');
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(logger("dev"));
-
-const API_PORT = 3001;
 app.use(cors());
-const router = express.Router();
-
-// this is our MongoDB database
-const dbRoute = "mongodb://jelo:a9bc839993@ds151382.mlab.com:51382/jelotest";
-
-
 
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://nyleve9:<password>@jobverse-cluster-ow6iv.mongodb.net/test?retryWrites=true";
+// const uri = "mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?retryWrites=true";
+const uri = "mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?authSource=admin";
 const client = new MongoClient(uri, { useNewUrlParser: true });
 client.connect(err => {
+  if (err) {
+    console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
+  }
+  console.log('A connection was made!');
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
+
   console.log(collection);
   client.close();
 });
 
+// // this is our MongoDB database
+// const dbRoute = "mongodb+srv://nyleve9:<password>@jobverse-cluster-ow6iv.mongodb.net/test?retryWrites=true";
+
+// const dbRoute = 'mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?authSource=admin';
 
 
-
-
-// // connects our back end code with the database
 // mongoose.connect(
 //   dbRoute,
 //   { useNewUrlParser: true }
 // );
 
-// let db = mongoose.connection;
+// const connection = mongoose.connection;
 
-// db.once("open", () => console.log("connected to the database"));
+// connection.once("open", () => console.log("MongoDB connection successfully established!"));
 
 // // checks if connection with the database is successful
-// db.on("error", console.error.bind(console, "MongoDB connection error:"));
+// connection.on("error", console.error.bind(console, "MongoDB connection error:"));
 
-// router.get("/getData", (req, res) => {
-//   Data.find((err, data) => {
-//     if (err) return res.json({ success: false, error: err });
-//     return res.json({ success: true, data: data });
-//   });
-// });
+
+// route to get jobverse data
+app.get("/jobverse", (req, res) => {
+  Data.find((err, data) => {
+    if (err) return res.json({ success: false, error: err });
+    return res.json({ success: true, data: data });
+  });
+});
 
 
 
