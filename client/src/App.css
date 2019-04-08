@@ -1,8 +1,51 @@
-.App {
-  text-align: center;
+body {
+  background: url(assets/contact.png) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
 }
 
-html, body, #app, #app>div {
-  width: 100vw;
-  height: 100vh;
+h1, h2, p, ul, li {
+  font-family: 'Space Mono', monospace;
+}
+
+ul.header li {
+  display: inline;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.header {
+  background-color: rgb(18, 9, 70);
+  margin: 0;
+  padding: 0;
+}
+
+ul.header li a {
+  color: #FFF;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 20px;
+  display: inline-block;
+}
+
+.content {
+  padding: 0;
+}
+
+.content h2 {
+  padding: 0;
+  margin: 0;
+}
+
+.content li {
+  margin-bottom: 10px;
+}
+
+.active {
+  background-color: rgb(39, 3, 238);
 }

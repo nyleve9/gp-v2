@@ -1,11 +1,19 @@
 import React, { Component } from "react";
+import { Jumbotron, Container, Button } from 'reactstrap';
+import './Home.css'
  
 class Home extends Component {
   render() {
     return (
+      // <div className="fluid-container">
+      //   <h2>Welcome, Galactic Polymaths!</h2>
+      // </div>
       <div>
-        <h2>Welcome Galactic Polymaths!</h2>
-        <img src="https://i2.wp.com/bestlifeonline.com/wp-content/uploads/2018/07/astronaut-floating-in-space.jpg?w=1024&ssl=1" alt="GP GP GP"></img>
+      <Jumbotron fluid>
+        <h1>Welcome, Galactic Polymaths!</h1>
+        <Button color="primary">Students</Button>
+        <Button color="primary">Teachers</Button>
+      </Jumbotron>
       </div>
     );
   }

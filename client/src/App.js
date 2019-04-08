@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
-import { BrowserRouter as Router, Route, NavLink, HashRouter } from 'react-router-dom';
-// import Navbar from './Components/Layout/Navbar';
-// import Footer from './Components/Layout/Footer';
-// import Home from './Components/Layout/Home';
-// import Social from './Components/social/Social';
+import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from './Home';
 import Contact from './Contact';
 import RenderedChart from './RenderedChart';
@@ -28,18 +24,8 @@ class App extends Component {
 
   render() {
     return (
-      // <Router>
-      //   <div className="container">
-      //     {/* <Navbar />
-      //     <Route exact path="/" component={Home} />
-      //     <Route exact path="/social" component={Social} />
-      //     <Footer /> */}
-      //     <RenderedChart />
-      //   </div>
-      // </Router>
       <Router>
-        <div className="container">
-          <h1>Galactic Polymath</h1>
+        <div className="fluid-container">
           <ul className="header">
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
