@@ -15,38 +15,45 @@ app.use(cors());
 
 
 const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?retryWrites=true";
-const uri = "mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?authSource=admin";
-const client = new MongoClient(uri, { useNewUrlParser: true });
-client.connect(err => {
-  if (err) {
-    console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
-  }
-  console.log('A connection was made!');
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-
-  // console.log(collection);
-  client.close();
+const url = "mongodb://localhost:27017/jobverse";
+const client = new MongoClient(url, { useNewUrlParser: true });
+client.connect((err, db) => {
+  if (err) throw err;
+  const nestdb = db.db("jobverse");
+  nestdb.collection('hierarchy').aggregate([
+    {
+      from:'attributes',
+      localField: 'name',
+      foreignField: 'title', 
+      as: 'jobdetails'
+    }
+  ]).toArray((err, res) => {
+    if (err) throw err;
+    console.log(JSON.stringify(res))
+    db.close();
+  });
+//   const collection = client.db("test").collection("devices");
+//   // perform actions on the collection object
+//   client.close();
 });
 
-// // this is our MongoDB database
-// const dbRoute = "mongodb+srv://nyleve9:<password>@jobverse-cluster-ow6iv.mongodb.net/test?retryWrites=true";
-
-// const dbRoute = 'mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?authSource=admin';
 
 
-// mongoose.connect(
-//   dbRoute,
-//   { useNewUrlParser: true }
-// );
+// const MongoClient = require('mongodb').MongoClient;
+// // const uri = "mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?retryWrites=true";
+// // const uri = "mongodb+srv://nyleve9:Teach2019!@jobverse-cluster-ow6iv.mongodb.net/test?authSource=admin";
+// const client = new MongoClient(uri, { useNewUrlParser: true });
+// client.connect(err => {
+//   if (err) {
+//     console.log('Error occurred while connecting to MongoDB Atlas...\n', err);
+//   }
+//   console.log('A connection was made!');
+//   const collection = client.db("jobverse").collection("hierarchy");
+//   // perform actions on the collection object
 
-// const connection = mongoose.connection;
-
-// connection.once("open", () => console.log("MongoDB connection successfully established!"));
-
-// // checks if connection with the database is successful
-// connection.on("error", console.error.bind(console, "MongoDB connection error:"));
+//   // console.log(collection);
+//   client.close();
+// });
 
 
 // route to get jobverse data

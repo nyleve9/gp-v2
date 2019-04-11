@@ -1,3 +1,7 @@
+h2, p {
+  color: #fff;
+}
+
 .fluid-container {
   background-image: url(assets/about.png);
   width: 100%;

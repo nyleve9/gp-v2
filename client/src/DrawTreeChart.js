@@ -12,7 +12,7 @@ class DrawTreeChart extends Component {
   state = {  }
   render() { 
     return (  
-      <div id="treeWrapper" style={{width: '800em', height: '300em'}}>
+      <div id="treeWrapper">
         <Tree 
           data={exTreeData} 
           translate={{x:100, y:400}}

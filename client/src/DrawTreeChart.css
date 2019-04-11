@@ -1,5 +1,23 @@
 
-#treewrapper {
-  height: 160vh;
-  width: 160vw;
+/* div {
+  height: 100vh;
+  width: 100vw;
+  background-image: url(assets/about.png);
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
+  background-color: rgb(134, 198, 250);
+} */
+
+div {
+  background: url(assets/contact.png) no-repeat center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  padding: 0;
+  margin: 0;
 }
