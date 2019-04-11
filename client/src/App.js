@@ -4,8 +4,9 @@ import './App.css';
 import { BrowserRouter as Router, Route, NavLink } from 'react-router-dom';
 import Home from './Home';
 import Contact from './Contact';
-import RenderedChart from './RenderedChart';
 import DrawTreeChart from './DrawTreeChart';
+import DrawBarChart from './DrawBarChart';
+import DrawLineChart from './DrawLineChart';
 
 class App extends Component {
   constructor(props) {
@@ -30,13 +31,15 @@ class App extends Component {
             <li><NavLink exact to="/">Home</NavLink></li>
             <li><NavLink to="/contact">Contact</NavLink></li>
             <li><NavLink to="/jobverse">Jobverse</NavLink></li>
-            <li><NavLink to="/charts">Charts</NavLink></li>
+            <li><NavLink to="/barplot">BarPlot</NavLink></li>
+            <li><NavLink to="/lineplot">LinePlot</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home}/>
             <Route path="/contact" component={Contact}/>
             <Route path="/jobverse" component={DrawTreeChart}/>
-            <Route path="/charts" component={RenderedChart}></Route>
+            <Route path="/barplot" component={DrawBarChart}></Route>
+            <Route path="/lineplot" component={DrawLineChart}></Route>
           </div>
         </div>
       </Router>

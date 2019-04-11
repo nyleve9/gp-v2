@@ -1,5 +1,5 @@
 
-/* div {
+.treewrapper {
   height: 100vh;
   width: 100vw;
   background-image: url(assets/about.png);
@@ -10,9 +10,9 @@
   padding: 0;
   margin: 0;
   background-color: rgb(134, 198, 250);
-} */
+}
 
-div {
+/* div {
   background: url(assets/contact.png) no-repeat center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -20,4 +20,4 @@ div {
   background-size: cover;
   padding: 0;
   margin: 0;
-}
+} */

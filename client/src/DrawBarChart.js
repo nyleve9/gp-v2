@@ -33,9 +33,9 @@ class XAxisTickLabel extends Component {
           y={0} 
           dy={3} 
           textAnchor="end" 
-          fontSize={11}
+          fontSize={18}
           fill="#666" 
-          transform="rotate(-70)">
+          transform="rotate(-50)">
             {payload.value}
         </text>
       </g>
@@ -45,28 +45,63 @@ class XAxisTickLabel extends Component {
 
 export default class DrawBarChart extends Component {
   render() {
+
+    const h4Style = {
+      color: '#fff',
+      textAlign: 'center'
+    };
+
+    const data = [
+      {
+        "Job_Satisfaction": "Somewhat dissatisfied + Extremely dissatisfied",
+        "Percent": 0.19572327,
+        "n": 778
+      },
+      {
+        "Job_Satisfaction": "Neither satisfied nor dissatisfied",
+        "Percent": 0.122515723,
+        "n": 487
+      },
+      {
+        "Job_Satisfaction": "Extremely satisfied + Somewhat satisfied",
+        "Percent": 0.678742138,
+        "n": 2698
+      },
+      {
+        "Job_Satisfaction": "N/A",
+        "Percent": 0.003018868,
+        "n": 12
+      }
+    ]
+
     return (
-      <BarChart
-        width={800}
-        height={700}
-        data={this.props.data}
-        margin={{
-          top: 20, right: 30, left: 20, bottom: 200,
-        }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="title" height={60} tick={<XAxisTickLabel />} interval={0} />
-        <YAxis />
-        <Tooltip />
-        <Legend />
-        <Bar 
-          type="monotone" 
-          dataKey="med_annual_wage_2017" 
-          stroke="#666" 
-          fill="tan" 
-          label={<DataPointLabel />} 
-        />
-      </BarChart>
+      <div>
+        <h4 style={h4Style}>STEM Job Satisfaction</h4>
+        <BarChart
+          width={800}
+          height={700}
+          // data={this.props.data}
+          data={data}
+          margin={{
+            top: 20, right: 30, left: 20, bottom: 200,
+          }}
+        >
+          {/* <CartesianGrid strokeDasharray="3 3" /> */}
+          {/* <XAxis dataKey="Job_Satisfaction" height={60} tick={<XAxisTickLabel />} interval={0} /> */}
+        <XAxis dataKey="Job_Satisfaction" height={60} tick={<XAxisTickLabel />} interval={0} />
+          <YAxis />
+          <Tooltip />
+          {/* <Legend /> */}
+          <Bar 
+            type="monotone" 
+            // dataKey="med_annual_wage_2017" 
+            dataKey="Percent"
+            stroke="#666" 
+            fill="tan" 
+            // label={<DataPointLabel />} 
+          />
+        </BarChart>
+      </div>
     );
   }
 }
