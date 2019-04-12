@@ -14,28 +14,28 @@ app.use(logger("dev"));
 app.use(cors());
 
 
-const MongoClient = require('mongodb').MongoClient;
-const url = "mongodb://localhost:27017/jobverse";
-const client = new MongoClient(url, { useNewUrlParser: true });
-client.connect((err, db) => {
-  if (err) throw err;
-  const nestdb = db.db("jobverse");
-  nestdb.collection('hierarchy').aggregate([
-    {
-      from:'attributes',
-      localField: 'name',
-      foreignField: 'title', 
-      as: 'jobdetails'
-    }
-  ]).toArray((err, res) => {
-    if (err) throw err;
-    console.log(JSON.stringify(res))
-    db.close();
-  });
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-});
+// const MongoClient = require('mongodb').MongoClient;
+// const url = "mongodb://localhost:27017/jobverse";
+// const client = new MongoClient(url, { useNewUrlParser: true });
+// client.connect((err, db) => {
+//   if (err) throw err;
+//   const nestdb = db.db("jobverse");
+//   nestdb.collection('hierarchy').aggregate([
+//     {
+//       from:'attributes',
+//       localField: 'name',
+//       foreignField: 'title', 
+//       as: 'jobdetails'
+//     }
+//   ]).toArray((err, res) => {
+//     if (err) throw err;
+//     console.log(JSON.stringify(res))
+//     db.close();
+//   });
+// //   const collection = client.db("test").collection("devices");
+// //   // perform actions on the collection object
+// //   client.close();
+// });
 
 
 
