@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Label} from 'recharts';
+import './DrawBarChart.css'
 
 class DataPointLabel extends Component {
   render() {
@@ -47,8 +48,9 @@ export default class DrawBarChart extends Component {
   render() {
 
     const h4Style = {
-      color: '#fff',
-      textAlign: 'center'
+      color: 'navy',
+      textAlign: 'center',
+      fontFamily: 'Space Mono'
     };
 
     const data = [
@@ -75,7 +77,7 @@ export default class DrawBarChart extends Component {
     ]
 
     return (
-      <div>
+      <div id="barplot">
         <h4 style={h4Style}>STEM Job Satisfaction</h4>
         <BarChart
           width={800}
@@ -97,7 +99,7 @@ export default class DrawBarChart extends Component {
             // dataKey="med_annual_wage_2017" 
             dataKey="Percent"
             stroke="#666" 
-            fill="tan" 
+            fill="lightblue" 
             // label={<DataPointLabel />} 
           />
         </BarChart>

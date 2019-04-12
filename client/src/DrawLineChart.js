@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend} from 'recharts';
+import './DrawLineChart.css';
 
 class DataPointLabel extends Component {
   render() {
@@ -72,8 +73,9 @@ export default class DrawLineChart extends Component {
     const { opacity } = this.state;
 
     const h4Style = {
-      color: '#fff',
-      textAlign: 'center'
+      color: 'navy',
+      textAlign: 'center',
+      fontFamily: 'Space Mono'
     };
 
     const data = [
@@ -580,7 +582,7 @@ export default class DrawLineChart extends Component {
     ];
 
     return (
-      <div>
+      <div id="lineplot">
         <h4 style={h4Style}>Nashville Precipitation and Max Temperatures</h4>
         <LineChart
           width={800}

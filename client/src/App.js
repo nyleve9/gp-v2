@@ -29,17 +29,17 @@ class App extends Component {
         <div className="fluid-container">
           <ul className="header">
             <li><NavLink exact to="/">Home</NavLink></li>
-            <li><NavLink to="/contact">Contact</NavLink></li>
             <li><NavLink to="/jobverse">Jobverse</NavLink></li>
             <li><NavLink to="/barplot">BarPlot</NavLink></li>
             <li><NavLink to="/lineplot">LinePlot</NavLink></li>
+            <li><NavLink to="/contact">Contact</NavLink></li>
           </ul>
           <div className="content">
             <Route exact path="/" component={Home}/>
-            <Route path="/contact" component={Contact}/>
             <Route path="/jobverse" component={DrawTreeChart}/>
             <Route path="/barplot" component={DrawBarChart}></Route>
             <Route path="/lineplot" component={DrawLineChart}></Route>
+            <Route path="/contact" component={Contact}/>
           </div>
         </div>
       </Router>
