@@ -1,3 +1,6 @@
 #barplot {
   background-color: #fff;
+  margin: auto;
+  padding-left: 5em;
+  height: 150vh;
 }

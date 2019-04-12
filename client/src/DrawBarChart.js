@@ -36,7 +36,7 @@ class XAxisTickLabel extends Component {
           textAnchor="end" 
           fontSize={18}
           fill="#666" 
-          transform="rotate(-50)">
+          transform="rotate(-70)">
             {payload.value}
         </text>
       </g>
@@ -50,7 +50,8 @@ export default class DrawBarChart extends Component {
     const h4Style = {
       color: 'navy',
       textAlign: 'center',
-      fontFamily: 'Space Mono'
+      fontFamily: 'Space Mono',
+      padding: '2em 1em 0.5em 1em'
     };
 
     const data = [
@@ -80,8 +81,8 @@ export default class DrawBarChart extends Component {
       <div id="barplot">
         <h4 style={h4Style}>STEM Job Satisfaction</h4>
         <BarChart
-          width={800}
-          height={700}
+          width={900}
+          height={600}
           // data={this.props.data}
           data={data}
           margin={{

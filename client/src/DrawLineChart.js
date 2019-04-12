@@ -75,7 +75,8 @@ export default class DrawLineChart extends Component {
     const h4Style = {
       color: 'navy',
       textAlign: 'center',
-      fontFamily: 'Space Mono'
+      fontFamily: 'Space Mono',
+      padding: '2em 1em 0.5em 1em'
     };
 
     const data = [
@@ -585,7 +586,7 @@ export default class DrawLineChart extends Component {
       <div id="lineplot">
         <h4 style={h4Style}>Nashville Precipitation and Max Temperatures</h4>
         <LineChart
-          width={800}
+          width={1000}
           height={700}
           // data={this.props.data}
           data = {data}
