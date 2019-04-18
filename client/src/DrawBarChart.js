@@ -79,7 +79,8 @@ export default class DrawBarChart extends Component {
 
     return (
       <div id="barplot">
-        <h4 style={h4Style}>STEM Job Satisfaction</h4>
+        <h4 style={h4Style}>Job Satisfaction</h4>
+        <h1 style={{fontFamily: 'Space Mono', fontSize:'1em', textAlign: 'center'}}>Science, Technology, Engineering, Math</h1>
         <BarChart
           width={900}
           height={600}
